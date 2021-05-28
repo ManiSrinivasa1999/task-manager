@@ -15,3 +15,14 @@ const server = app.listen(port, () => {
 })
 
 // server.close()
+
+const bcrypt = require('bcryptjs')
+const myFunction = async () => {
+  const password = 'ManiManju'
+  const hashedPassword = await bcrypt.hash(password, 8)
+  // console.log(password, hashedPassword)
+
+  const isMatch = await bcrypt.compare('ManiManju3', hashedPassword)
+  // console.log(isMatch)
+}
+myFunction()
